@@ -13,17 +13,20 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *temp;
+	listint_t *temp2;
 
 	if (!list || (list->next == NULL))
 		return (0);
-	if (list->next == list)
-		return (2);
 
 	temp = list->next;
+	temp2 = list->next->next;
 
 	while (temp->next != NULL)
 	{
-		if (temp == list)
+		temp = temp->next;
+		temp2 = temp2->next->next;
+
+		if (temp == temp2)
 			return (1);
 
 		temp = temp->next;
