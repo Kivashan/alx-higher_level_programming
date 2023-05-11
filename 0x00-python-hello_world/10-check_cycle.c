@@ -12,24 +12,19 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *temp;
-	listint_t *temp2;
+	listint_t *temp = list;
+	listint_t *temp2 = list;
 
 	if (!list || (list->next == NULL))
 		return (0);
 
-	temp = list->next;
-	temp2 = list->next->next;
-
-	while (temp->next != NULL)
+	while (temp2 != NULL && temp2->next != NULL && temp != NULL)
 	{
 		temp = temp->next;
 		temp2 = temp2->next->next;
 
 		if (temp == temp2)
 			return (1);
-
-		temp = temp->next;
 	}
 
 	return (0);
