@@ -22,15 +22,19 @@ int is_palindrome(listint_t **head)
 	while (i < (len / 2))
 	{
 		sum += temp->n;
+		temp = temp->next;
 		i++;
 	}
 
 	if (len % 2 == 1)
+	{
+		temp = temp->next;
 		i++;
-
+	}
 	while (i < len)
 	{
 		sum -= temp->n;
+		temp = temp->next;
 		i++;
 	}
 
