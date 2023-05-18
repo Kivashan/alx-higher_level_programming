@@ -5,5 +5,5 @@ def roman_to_int(roman_string):
         total = 0
         for i in roman_string:
             total += a[i]
-        return (total)
+        return (int(total))
     return (0)
