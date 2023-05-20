@@ -23,7 +23,7 @@ if __name__ == "__main__":
         print("{:d} * {:d} = {:d}".format(int(argv[1]), int(argv[3]), total))
     elif (op[0] == "/"):
         total = int(argv[1]) / int(argv[3])
-        print("{:d} / {:d} = {:d}".format(int(argv[1]), int(argv[3]), total))
+        print("{:d} / {:d} = {:d}".format(int(argv[1]), int(argv[3]), int(total)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
