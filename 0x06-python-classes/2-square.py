@@ -11,7 +11,7 @@ class Square:
         Args:
             param1: first parameter
         '''
-        if (type(size) == str):
+        if ((type(size) == str) or (type(size) == float)):
             raise TypeError("size must be an integer")
         elif (size < 0):
             raise ValueError("size must be >= 0")
