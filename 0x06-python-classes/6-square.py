@@ -41,6 +41,8 @@ class Square:
                 raise TypeError(msg)
             else:
                 self.__position = value
+        else:
+             raise TypeError(msg)
 
     def area(self):
         '''Method that returns the area of a square'''
@@ -55,7 +57,7 @@ class Square:
             while (row < self.__size):
                 i = 0
                 column = 0
-                [print(" ", end="") for d in range(i, self.__position[0])]
-                [print("#", end="") for d in range(column, self.__size)]
+                [print(" ", end="") for d in range(self.__position[0])]
+                [print("#", end="") for d in range(self.__size)]
                 print()
                 row += 1
