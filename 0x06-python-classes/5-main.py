@@ -6,7 +6,7 @@ my_square.my_print()
 
 print("--")
 
-my_square.size = 10
+my_square.size = -5
 my_square.my_print()
 
 print("--")
