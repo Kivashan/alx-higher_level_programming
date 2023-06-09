@@ -57,3 +57,15 @@ Description
         5
         >>> add_integer(a, b)
         27
+
+    Cannot handle float values above sys.float_info.max:
+        >>> add_integer(2, 1.82e310)
+        Traceback (most recent call last):
+        	...
+        OverflowError: cannot convert float infinity to integer
+
+    Cannot handle "NaN" or "nan" float value:
+        >>> add_integer(2, float("NaN"))
+        Traceback (most recent call last):
+            ...
+        ValueError: cannot convert float NaN to integer
