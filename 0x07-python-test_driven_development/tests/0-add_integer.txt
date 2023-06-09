@@ -18,8 +18,11 @@ Description
     'a' and 'b' must be a float or an integer value:
         >>> a = 5
         >>> b = -2
+        >>> c = -9
         >>> add_integer(a, b)
         3
+        >>> add_integer(b, c)
+        -11
 
     If a is not a float or integer, a TypeError message will be raised:
         >>> a = "Hello"
@@ -28,6 +31,14 @@ Description
         Traceback (most recent call last):
             ...
         TypeError: a must be an integer
+
+    If b is not a float or an integer, a TypeError message will be raised:
+        >>> a = 9
+        >>> b = (1, 5)
+        >>> add_integer(a, b)
+        Traceback (most recent call last):
+            ...
+        TypeError: b must be an integer
 
     If only one value is provided, then a default value of 98 will be added
     to the value that was passed:
