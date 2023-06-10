@@ -111,4 +111,17 @@ Description:
             >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3.8)
             [[0.27, 0.52, 0.79], [1.06, 1.31, 1.58]]
 
+
+        only one argument supplied:
+            >>> matrix_divided([1, 2, 3])
+            Traceback (most recent call last):
+	            ...
+            TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+        no arguments supplied
+            >>> matrix_divided()
+            Traceback (most recent call last)
+	            ...
+            TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
         return a new matrix storing the quotient of all divisions   
