@@ -1,0 +1,47 @@
+===========================
+How to use 3-say_my_name.py
+===========================
+
+------------
+Description:
+------------
+
+    This module contains a function that takes in two string arguments
+    and prints a string message on the console.
+
+    syntax:
+        say_my_name(first_name, last_name="")
+
+    Args:
+        first_name: A given string
+        last_name: A given string or by default and empty string
+
+    Usage:
+        First import module:
+            >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+        If no arguments passed:
+            >>> say_my_name()
+            Traceback (most recent call last):
+            	...
+            TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+        If one argument passed, then last_name by default is an empty string:
+            >>> say_my_name("Kivashan")
+            My name is Kivashan 
+
+        Pass two string arguments:
+            >>> say_my_name("Kivashan", "Vadivelu")
+            My name is Kivashan Vadivelu
+
+        Pass non-string argument as first_name:
+            >>> say_my_name(25, "Vadivelu")
+            Traceback (most recent call last):
+	            ...
+            TypeError: first_name must be a string
+
+        Pass non_string argument as last_name:
+            >>> say_my_name("Kivashan", ("Hello", "World"))
+            Traceback (most recent call last):
+	            ...
+            TypeError: last_name must be a string
