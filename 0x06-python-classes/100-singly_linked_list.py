@@ -63,7 +63,7 @@ class SinglyLinkedList:
             string = ""
             for i in self.__head:
                 string = string + str(i.data)
-                if i != len(self.__head) - 1:
+                if i != self.__head[-1]:
                     string = string + "\n"
             return string
 
