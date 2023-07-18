@@ -1,0 +1,51 @@
+=======================================
+How to use module 4-text_indentation.py
+=======================================
+
+------------
+Description:
+------------
+
+    Usage:
+    ------
+        text_indentation(text)
+    
+        First import module:
+        --------------------
+            >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+        Argument passed must be a string:
+        ---------------------------------
+            >>> text_indentation("What? What is that.")
+            What?
+            <BLANKLINE>
+            What is that.
+            <BLANKLINE>
+
+            >>> text_indentation("What? What is that")
+            What?
+            <BLANKLINE>
+            What is that
+
+        Empty string:
+        -------------
+            >>> text_indentation("")
+
+        Non-string argument passed:
+        ---------------------------
+            >>> text_indentation(123456)
+            Traceback (most recent call last):
+                ...
+            TypeError: text must be a string
+
+            >>> text_indentation(None)
+            Traceback (most recent call last):
+                ...
+            TypeError: text must be a string
+
+        No argument passed:
+        -------------------
+            >>> text_indentation()
+            Traceback (most recent call last):
+                ...
+            TypeError: text_indentation() missing 1 required positional argument: 'text'
