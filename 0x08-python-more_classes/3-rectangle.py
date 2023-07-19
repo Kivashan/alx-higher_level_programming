@@ -53,6 +53,9 @@ class Rectangle:
     def __str__(self):
         '''Method that prints a representation of the object'''
         str_rep = ""
+        if 0 in [self.__width, self.__height]:
+            return str_rep
+
         for i in range(self.__height):
             for j in range(self.__width):
                 str_rep = str_rep + "#"
