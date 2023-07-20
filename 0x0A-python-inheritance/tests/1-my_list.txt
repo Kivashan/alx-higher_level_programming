@@ -1,0 +1,116 @@
+=======================
+How to use 1-my_list.py
+=======================
+
+-----------
+Description
+-----------
+
+    A module that contains a class called MyList.
+    MyList inherits from the list class.
+    
+    The module contains a function takes a list object as a parameter
+    and that prints a list in ascending order
+    It makes an assumption that all elements in the list are integers.
+
+    ------
+    Usage:
+    ------
+        MyList()
+
+        and
+
+        Mylist.print_sorted(obj)
+        
+        Args:
+        -----
+            obj: a list object
+
+        Return:
+        -------
+            The function does not return a value
+
+    ------------------------
+    First import the module:
+    ------------------------
+
+        >>> MyList = __import__("1-my_list").MyList
+
+    ------------------------------
+    Creating an instance of MyList
+    ------------------------------
+        
+        without any arguments
+        ---------------------
+
+            >>> new_list = MyList()
+            >>> print(new_list)
+            []
+
+        with arguments 
+        --------------
+            1 argument, object is non-iterable
+            ----------------------------------
+
+                >>> new_list = MyList(1)
+                Traceback (most recent call last):
+                    ...
+                TypeError: 'int' object is not iterable
+
+            1 argument, object is iterable
+            ------------------------------
+
+                >>> new_list = MyList((1, 2))
+                >>> print(new_list)
+                [1, 2]
+
+                >>> new_list = MyList([1, 2, 3])
+                >>> print(new_list)
+                [1, 2, 3]
+
+                >>> new_list = MyList("Hello")
+                >>> print(new_list)
+                ['H', 'e', 'l', 'l', 'o']
+
+            2 arguments, object non-iterable
+            --------------------------------
+
+                >>> new_list = MyList(1, 2)
+                Traceback (most recent call last):
+                    ...
+                TypeError: list expected at most 1 argument, got 2
+
+            2 arguments, object iterable
+            ----------------------------
+
+                >>> new_list = MyList([1, 2, 3], [4, 5, 6])
+                Traceback (most recent call last):
+                    ...
+                TypeError: list expected at most 1 argument, got 2
+
+        ------------------------------
+        Testing print_sorted function:
+        ------------------------------
+
+            with a list of integers only
+            ----------------------------
+
+                >>> new_list = MyList([10, 8, 12, 1])
+                >>> new_list.print_sorted()
+                [1, 8, 10, 12]
+
+            with a list of characters only
+            ------------------------------
+
+                >>> new_list = MyList("Hello")
+                >>> new_list.print_sorted()
+                ['H', 'e', 'l', 'l', 'o']
+
+            with a mixed list
+            -----------------
+
+                >>> new_list = MyList(["how", 2.5, 10])
+                >>> new_list.print_sorted()
+                Traceback (most recent call last):
+                    ...
+                TypeError: '<' not supported between instances of 'float' and 'str'
