@@ -7,7 +7,7 @@ to an object
 def add_attribute(obj, name, value):
     '''Adds an attribute to an object if possible'''
     atts = dir(obj)
-    if "__dict__" not in atts and "__slots__" in atts:
+    if "__dict__" not in atts or "__slots__" in atts:
         raise TypeError("can't add new attribute")
     else:
         obj.name = value
