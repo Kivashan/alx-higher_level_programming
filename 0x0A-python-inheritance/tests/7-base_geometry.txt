@@ -1,0 +1,114 @@
+=============================
+How to use 7-base_geometry.py
+=============================
+
+-----------
+Description
+-----------
+
+    This module contains a class that defines a BaseGeometry object.
+    Thus far it contains two functions.
+    "area" and "integer validator"
+
+    ------
+    Usage:
+    ------
+
+        BaseGeometry()
+
+        ------------------------
+        First import the module:
+        ------------------------
+
+            >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+        Calling the constructor method
+        ------------------------------
+
+            Without arguments
+            -----------------
+
+                >>> bg = BaseGeometry()
+
+            With any argument
+            -----------------
+
+                >>> bg = BaseGeometry(5)
+                Traceback (most recent call last):
+                    ...
+                TypeError: BaseGeometry() takes no arguments
+
+                >>> bg = BaseGeometry("Hello")
+                Traceback (most recent call last):
+                    ...
+                TypeError: BaseGeometry() takes no arguments
+
+            Calling area method of object, area method does not take any arguments
+            ----------------------------------------------------------------------
+
+                >>> bg = BaseGeometry()
+                >>> bg.area()
+                Traceback (most recent call last):
+                    ...
+                Exception: area() is not implemented
+
+            Area method with arguments, raises an error
+            --------------------------------------------
+
+                >>> bg = BaseGeometry()
+                >>> bg.area(10)
+                Traceback (most recent call last):
+                    ...
+                TypeError: area() takes 1 positional argument but 2 were given
+
+        Calling the integer_validator argument:
+        ---------------------------------------
+
+            It takes two arguments, a string which is the variable name and the value 
+            -------------------------------------------------------------------------
+            of that variable, if value is not an integer an exception will be raised
+            ------------------------------------------------------------------------
+
+                >>> bg = BaseGeometry()
+                >>> bg.integer_validator("width", 5)
+
+                if value is a float
+                -------------------
+
+                    >>> bg.integer_validator("width", 5.5)
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: width must be an integer
+
+                if value is an iterable
+                -----------------------
+
+                    >>> bg.integer_validator("width", [1, 2, 3])
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: width must be an integer
+
+                with 1 argument
+                ---------------
+
+                    >>> bg.integer_validator("width")
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+                with no arguments
+                -----------------
+
+                    >>> bg.integer_validator()
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+                with 3 arguments
+                ----------------
+
+                    >>> bg.integer_validator("width", 5, 10)
+                    Traceback (most recent call last):
+                        ...
+                    TypeError: integer_validator() takes 3 positional arguments but 4 were given
