@@ -16,7 +16,7 @@ class Student:
         obj_dict = self.__dict__
         new_dict = dict()
 
-        if isinstance(attrs, list):
+        if isinstance(attrs, list) and len(attrs) > 0:
             for item in attrs:
                 if item in obj_dict:
                     new_dict[item] = obj_dict[item]
