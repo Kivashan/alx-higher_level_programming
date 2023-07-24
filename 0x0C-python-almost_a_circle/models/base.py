@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Contains the Base class and manages the id attribute of all future
 classes'''
+import json
 
 
 class Base:
@@ -23,3 +24,19 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        '''Returns the json representation of list_dictionaries
+
+        Args:
+            list_dictionaries: a list of dictionaries
+
+        Return:
+            A json string representation of the argument or the string "[]"
+            if empty
+        '''
+        if list_dictionaries is None or list_dictionaries == {}:
+            print("one")
+            return json.dumps(list_dictionaries)
+        else:
+            return "[]"
