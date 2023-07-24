@@ -101,10 +101,13 @@ class Rectangle(Base):
         return s.format(self.id, self.__x, self.__y, self.__width,
                         self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''Updates Rectangle objects attributes'''
 
         atr = ["id", "width", "height", "x", "y"]
         if args:
             for index, value in enumerate(args):
                 setattr(self, atr[index], value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
