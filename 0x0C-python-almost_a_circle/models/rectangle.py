@@ -87,9 +87,11 @@ class Rectangle(Base):
 
     def display(self):
         '''Displays a representation of a Rectangle object using "#" symbol'''
+
+        [print() for row in range(self.__y)]
         for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
+            [print(" ", end="") for column in range(self.__x)]
+            [print("#", end="") for j in range(self.__width)]
             print()
 
     def __str__(self):
