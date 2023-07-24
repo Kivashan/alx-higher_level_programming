@@ -6,6 +6,10 @@ from models.base import Base
 class Rectangle(Base):
     '''A class defining a Rectangle object, inherits from Base class'''
 
+    type_err_msg = "%s must be an integer"
+    value_err_msg = "%s must be > 0"
+    value_err_msg_xy = "%s must be >= 0"
+
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Constructor method for Rectangle class'''
 
@@ -23,9 +27,14 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         '''Setter method for width attribute'''
-        self.__width = width
+        if not isinstance(value, int):
+            raise TypeError(Rectangle.type_err_msg % "width")
+        elif value <= 0:
+            raise ValueError(Rectangle.value_err_msg % "width")
+        else:
+            self.__width = value
 
     @property
     def height(self):
@@ -33,9 +42,14 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def height(self, height):
+    def height(self, value):
         '''Setter method for height attribute'''
-        self.__height = height
+        if not isinstance(value, int):
+            raise TypeError(Rectangle.type_err_msg % "height")
+        elif value <= 0:
+            raise ValueError(Rectangle.value_err_msg % "height")
+        else:
+            self.__height = value
 
     @property
     def x(self):
@@ -43,9 +57,14 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def x(self, x):
+    def x(self, value):
         '''Setter method for x attribute'''
-        self.__x = x
+        if not isinstance(value, int):
+            raise TypeError(Rectangle.type_err_msg % "x")
+        elif value < 0:
+            raise ValueError(Rectangle.value_err_msg_xy % "x")
+        else:
+            self.__x = value
 
     @property
     def y(self):
@@ -53,6 +72,11 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def y(self, y):
+    def y(self, value):
         '''Setter method for y attribute'''
-        self.__y = y
+        if not isinstance(value, int):
+            raise TypeError(Rectangle.type_err_msg % "y")
+        elif value < 0:
+            raise ValueError(Rectangle.value_err_msg_xy % "y")
+        else:
+            self.__y = value
