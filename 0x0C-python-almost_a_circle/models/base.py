@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Contains the Base class and manages the id attribute of all future
 classes'''
+import sys
 import json
 
 
@@ -40,3 +41,20 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''Saves a list of objects in json represenatation to a file'''
+
+        filename = "{}.json".format(cls.__name__)
+
+        if list_objs is None:
+            json_str = '[]'
+        else:
+            new_list = []
+            for obj in list_objs:
+                new_list.append(obj.to_dictionary())
+            json_str = cls.to_json_string(new_list)
+
+        with open(filename, "w", encoding='utf-8') as f:
+            f.write(json_str)
