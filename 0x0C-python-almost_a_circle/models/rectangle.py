@@ -80,3 +80,21 @@ class Rectangle(Base):
             raise ValueError(Rectangle.value_err_msg_xy % "y")
         else:
             self.__y = value
+
+    def area(self):
+        '''Returns the area of a Rectangle object'''
+        return self.__width * self.__height
+
+    def display(self):
+        '''Displays a representation of a Rectangle object using "#" symbol'''
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        '''Returns the string representation of a Rectangle object'''
+
+        s = "[Rectangle] ({}) {}/{} - {}/{}"
+        return s.format(self.id, self.__x, self.__y, self.__width,
+                        self.__height)
