@@ -8,7 +8,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         '''Constructor method for Rectangle class'''
-        
+
         self.width = width
         self.height = height
         self.x = x
@@ -41,6 +41,7 @@ class Rectangle(Base):
     def x(self):
         '''Getter method for x attribute'''
         return self.__x
+
     @x.setter
     def x(self, x):
         '''Setter method for x attribute'''
