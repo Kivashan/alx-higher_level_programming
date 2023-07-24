@@ -40,4 +40,4 @@ class Base:
             print("one")
             return json.dumps(list_dictionaries)
         else:
-            return "[]"
+            return json.dumps([])
