@@ -36,8 +36,7 @@ class Base:
             A json string representation of the argument or the string "[]"
             if empty
         '''
-        if list_dictionaries is None or list_dictionaries == {}:
-            print("one")
-            return json.dumps(list_dictionaries)
+        if list_dictionaries is None or list_dictionaries == dict():
+            return "[]"
         else:
-            return json.dumps([])
+            return json.dumps(list_dictionaries)
