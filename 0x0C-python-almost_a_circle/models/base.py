@@ -58,3 +58,13 @@ class Base:
 
         with open(filename, "w", encoding='utf-8') as f:
             f.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''Takes the json_string argument and deserializes it, the result
+        should be a list of dictionaries which is returned'''
+
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
