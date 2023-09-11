@@ -34,4 +34,4 @@ if (!localStorage.getItem("name")) {
 
 myButton.onclick = () => {
 	setUserName();
-}
+};
