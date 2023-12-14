@@ -11,6 +11,7 @@ module.exports = class Rectangle {
     }
   }
 
+  // method that prints the rectangle using x as a representation of 1 unit
   print () {
     for (let i = 0; i < this.height; i++) {
       let arr = '';
@@ -19,5 +20,18 @@ module.exports = class Rectangle {
       }
       console.log(arr);
     }
+  }
+
+  // method that swaps the width value with the height value and vice versa
+  rotate () {
+    const temp = this.width;
+    this.width = this.height;
+    this.height = temp;
+  }
+
+  // method that doubles the width and height value
+  double () {
+    this.width *= 2;
+    this.height *= 2;
   }
 };
