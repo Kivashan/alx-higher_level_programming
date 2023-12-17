@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""Script that lists all states beginning with 'N'"""
+"""Script that returns a list of states based on user input"""
 
 from sys import argv
 import MySQLdb
+from validator import validator
 
 if __name__ == "__main__":
+
+    local_data = []
 
     """Create connection to db"""
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
@@ -13,11 +16,15 @@ if __name__ == "__main__":
     """Create cursor object"""
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
+    cur.execute("SELECT * FROM states")
     rows = cur.fetchall()
-    
-    for i in rows:
-        if (i[1].startswith('N')):
-                print(i)
+
+    """Call Validator function"""
+    local_data = validator(rows, argv[4])
+
+    if local_data != []:
+        for i in local_data:
+            print(i)
 
     cur.close()
+    db.close()
