@@ -21,9 +21,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    index, state = session.query(State.id, State.name).first()
-    if (index):
-        print("{:d}: {}".format(index, state))
+    first = session.query(State).first()
+    if (first):
+        print("{:d}: {}".format(first.id, first.name))
 
     """End session: releases resources used in session"""
     session.close()
