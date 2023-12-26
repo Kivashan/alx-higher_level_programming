@@ -21,9 +21,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    first = session.query(State).first()
+    first = session.query(State).filter(State.name.like('%a%')).all()
     if (first):
-        print("{:d}: {}".format(first.id, first.name))
+        for state_obj in first:
+            print("{:d}: {}".format(state_obj.id, state_obj.name))
     else:
         print("Nothing")
 
