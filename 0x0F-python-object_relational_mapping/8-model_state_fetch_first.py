@@ -22,7 +22,8 @@ if __name__ == "__main__":
     session = Session()
 
     index, state = session.query(State.id, State.name).first()
-    print("{:d}: {}".format(index, state))
+    if (index):
+        print("{:d}: {}".format(index, state))
 
     """End session: releases resources used in session"""
     session.close()
