@@ -26,4 +26,4 @@ if __name__ == "__main__":
         print(query)
     finally:
         """Closing session releases any resources in use for this session"""
-        print('Closed')
+        session.close()
