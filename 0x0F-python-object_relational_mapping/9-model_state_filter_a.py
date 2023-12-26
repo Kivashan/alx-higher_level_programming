@@ -22,11 +22,8 @@ if __name__ == "__main__":
     session = Session()
 
     first = session.query(State).filter(State.name.like('%a%')).all()
-    if (first):
-        for state_obj in first:
-            print("{:d}: {}".format(state_obj.id, state_obj.name))
-    else:
-        print("Nothing")
+    for state_obj in first:
+       print("{:d}: {}".format(state_obj.id, state_obj.name))
 
     """End session: releases resources used in session"""
     session.close()
