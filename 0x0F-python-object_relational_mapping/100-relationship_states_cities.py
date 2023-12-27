@@ -23,12 +23,12 @@ if __name__ == "__main__":
     session = Session()
 
     """Create new State and City objects"""
-    state = State(name='California')
-    state.cities = [City(name='San Francisco')]
+    city = City(name='San Francisco')
+    city.state = State(name='California')
 
     """Add state object to session, no need to add city object as they are
     both linked because of relationship and backref, see state class for
     use"""
-    session.add(state)
+    session.add(city)
     session.commit()
     session.close()
