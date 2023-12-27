@@ -22,7 +22,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    """Create new State and City objects"""
+    """Create new State and City objects if state and city
+    do not exist in db, check to be added"""
     city = City(name='San Francisco')
     city.state = State(name='California')
 
