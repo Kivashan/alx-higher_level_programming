@@ -10,6 +10,6 @@ if (!argv[2]) {
   if (isNaN(num)) {
     console.log('Not a number');
   } else {
-    console.log(Math.floor(num));
+    console.log('My number: ' + Math.floor(num));
   }
 }
