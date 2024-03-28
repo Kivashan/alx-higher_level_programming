@@ -9,12 +9,12 @@ import MySQLdb as m
 
 if __name__ == '__main__':
     db = m.connect(host='localhost', user=argv[1], passwd=argv[2], db=argv[3],\
-                   port=argv[4])
+                   port=3306)
 
     cur = db.cursor()
 
-    db_query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id"\
-               .format(argv[4])
+    db_query = ("SELECT * FROM states WHERE name LIKE BINARY '%s' ORDER BY id",\
+                (argv[4]))
 
     a = cur.execute(db_query)
     for i in range(a):
